@@ -108,4 +108,10 @@ public class Employee {
                 ", jobTitle='" + jobTitle + '\'' +
                 '}';
     }
+
+    public String getDataBoss(){
+        return getFirstName() + " " + getLastName();
+
+    }
+
 }

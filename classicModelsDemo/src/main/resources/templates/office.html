@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Classic Models Shop</title>
-    <link th:href="@{/css/bulma.min.css}" rel="stylesheet"></link>
+    <link th:href="@{/css/bulma.min.css}" rel="stylesheet">
 </head>
 <body>
 <section class="hero is-primary">
@@ -44,8 +44,8 @@
             <td th:text="${employee.firstName}"></td>
             <td th:text="${employee.extension}"></td>
             <td th:text="${employee.email}"></td>
-            <td th:text="${employee.office}"></td>
-            <td th:text="${employee.boss}"></td>
+            <td th:text="${employee.office.addressLine1}"></td>
+            <td th:text="${employee.boss?.firstName} + ' ' + ${employee.boss?.lastName}"></td>
             <td th:text="${employee.jobTitle}"></td>
         </tr>
     </table>

@@ -69,4 +69,9 @@ public class MainController {
         return model;
     }
 
+    @GetMapping("/test")
+    public String test(){
+        return "test";
+    }
+
 }
