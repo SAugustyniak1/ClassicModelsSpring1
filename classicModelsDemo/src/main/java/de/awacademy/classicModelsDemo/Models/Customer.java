@@ -11,10 +11,10 @@ public class Customer {
 
     @Id
     @Column(name = "customerNumber")
-    private int customerNumber;
+    private Long customerNumber;
 
     @Column(name = "salesRepEmployeeNumber")
-    private int salesRepEmployeeNumber;
+    private Long salesRepEmployeeNumber;
 
     public Customer() {
     }
@@ -23,7 +23,7 @@ public class Customer {
         return customerNumber;
     }
 
-    public void setCustomerNumber(int customerNumber) {
+    public void setCustomerNumber(Long customerNumber) {
         this.customerNumber = customerNumber;
     }
 
@@ -31,7 +31,7 @@ public class Customer {
         return salesRepEmployeeNumber;
     }
 
-    public void setSalesRepEmployeeNumber(int salesRepEmployeeNumber) {
+    public void setSalesRepEmployeeNumber(Long salesRepEmployeeNumber) {
         this.salesRepEmployeeNumber = salesRepEmployeeNumber;
     }
 }
