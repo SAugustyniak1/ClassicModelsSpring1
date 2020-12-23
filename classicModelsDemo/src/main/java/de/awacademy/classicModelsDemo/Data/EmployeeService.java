@@ -24,5 +24,21 @@ public class EmployeeService {
         }
     }
 
+        public List<Employee> getEmployeesByOffice(String office) {
+        List<Employee> employeeList = repository.findAllByOffice_OfficeCode(office);
+
+        if(employeeList.size() > 0) {
+            return employeeList;
+        } else {
+            return new ArrayList<Employee>();
+        }
+    }
+
+
+
+
+
+
+
     // TODO More convenience methods for INSERT, UPDATE and DELETE
 }

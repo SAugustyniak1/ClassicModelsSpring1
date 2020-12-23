@@ -52,6 +52,28 @@ public class MainController {
     @GetMapping("/office")
     public ModelAndView employees(HttpServletRequest request) {
 
+
+        String officeCode = request.getParameter("code");
+        Office office = officeService.getOfficeById(officeCode);
+
+        List<Employee> employeeList = employeeService.getEmployeesByOffice(officeCode);
+
+
+        // Instead of letting Hibernate pick the file automatically by returning a string
+        // We can create a ModelAndView of the page and return it
+        // Same effect, different way of doing it
+        ModelAndView model = new ModelAndView("office");
+
+        model.addObject("office", office);
+        model.addObject("employees", employeeList);
+
+        return model;
+    }
+
+    @GetMapping("/AllEmployees")
+    public ModelAndView allEmployees(HttpServletRequest request) {
+
+
         String officeCode = request.getParameter("code");
         Office office = officeService.getOfficeById(officeCode);
 
@@ -68,6 +90,8 @@ public class MainController {
 
         return model;
     }
+
+
 
     @GetMapping("/test")
     public String test(){
