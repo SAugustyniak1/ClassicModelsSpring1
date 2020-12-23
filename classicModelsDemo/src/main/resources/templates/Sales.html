@@ -29,24 +29,20 @@
     </div>
     <table class="table">
         <tr>
-            <th>Employee Number</th>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Phone Extension</th>
-            <th>Email</th>
-            <th>Office</th>
-            <th>Boss</th>
-            <th>Job Title</th>
+            <th>Order Number</th>
+            <th>Order Date</th>
+            <th>Required Date</th>
+            <th>Shipped Date</th>
+            <th>Status</th>
+            <th>Comments</th>
         </tr>
-        <tr th:each="employee: ${employees}">
-            <td th:text="${employee.employeeNumber}"></td>
-            <td th:text="${employee.lastName}"></td>
-            <td th:text="${employee.firstName}"></td>
-            <td th:text="${employee.extension}"></td>
-            <td th:text="${employee.email}"></td>
-            <td th:text="${employee.office.addressLine1}"></td>
-            <td th:text="${employee.boss?.firstName} + ' ' + ${employee.boss?.lastName}"></td>
-            <td th:text="${employee.jobTitle}"></td>
+        <tr th:each="order: ${orders}">
+            <td th:text="${order.orderNumber}"></td>
+            <td th:text="${order.orderDate}"></td>
+            <td th:text="${order.requiredDate}"></td>
+            <td th:text="${order?.shippedDate}"></td>
+            <td th:text="${order.status}"></td>
+            <td th:text="${order?.comments}"></td>
         </tr>
     </table>
 </div>
