@@ -30,7 +30,18 @@ public class Order {
     @Column(name = "comments")
     private String comments;
 
+    @Column(name ="customerNumber")
+    private int customerNumber;
+
     public Order() {
+    }
+
+    public int getCustomerNumber() {
+        return customerNumber;
+    }
+
+    public void setCustomerNumber(int customerNumber) {
+        this.customerNumber = customerNumber;
     }
 
     public Long getOrderNumber() {
