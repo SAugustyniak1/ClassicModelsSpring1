@@ -19,7 +19,7 @@ public class Customer {
     public Customer() {
     }
 
-    public int getCustomerNumber() {
+    public Long getCustomerNumber() {
         return customerNumber;
     }
 
@@ -27,7 +27,7 @@ public class Customer {
         this.customerNumber = customerNumber;
     }
 
-    public int getSalesRepEmployeeNumber() {
+    public Long getSalesRepEmployeeNumber() {
         return salesRepEmployeeNumber;
     }
 

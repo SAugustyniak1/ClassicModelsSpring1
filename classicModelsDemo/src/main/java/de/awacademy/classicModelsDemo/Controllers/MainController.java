@@ -4,10 +4,12 @@ import de.awacademy.classicModelsDemo.Data.EmployeeService;
 import de.awacademy.classicModelsDemo.Data.OfficeService;
 import de.awacademy.classicModelsDemo.Models.Employee;
 import de.awacademy.classicModelsDemo.Models.Office;
+import de.awacademy.classicModelsDemo.Models.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -81,9 +83,11 @@ public class MainController {
 
 
     @GetMapping("/sales")
-    public String sales(){
-
-
+    public String sales(Model model, @RequestParam("id")Long id) {
+        Employee employee = employeeService.findById(id);
+        List<Order> orderList = orderService.findOrdersByEmployee(employee.getEmployeeNumber());
+        model.addAttribute("orders", orderList);
+        model.addAttribute("employee", employee);
         return "sales";
     }
 
